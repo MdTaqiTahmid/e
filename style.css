@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Set up radio buttons for navigation (hidden) */
+input[type="radio"] {
+    display: none;
+}
+
+/* Show slides based on radio button state */
+#slide1:checked ~ .slide:nth-child(2),
+#slide2:checked ~ .slide:nth-child(4),
+#slide3:checked ~ .slide:nth-child(6) {
+    display: block;
+}
+
+/* Automatic Slideshow */
+@keyframes slider {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    33.33% { opacity: 1; }
+    38.33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Apply animations to each slide */
+#slide1:checked ~ .slide:nth-child(2) { animation: slider 9s infinite; }
+#slide2:checked ~ .slide:nth-child(4) { animation: slider 9s infinite 3s; }
+#slide3:checked ~ .slide:nth-child(6) { animation: slider 9s infinite 6s; }
+
+/* Navigation Dots */
+.nav-dots {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-dots label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input#slide1:checked ~ .nav-dots label[for="slide1"],
+input#slide2:checked ~ .nav-dots label[for="slide2"],
+input#slide3:checked ~ .nav-dots label[for="slide3"] {
+    background-color: #333;
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern E-Commerce Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md mt-2 h-24">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-4xl font-bold text-gray-800">E-Shop</h1>
+            <body class="bg-gray-100 flex justify-center items-center min-h-screen">
+                <!-- Search Bar Section -->
+                <div class="relative w-full max-w-md">
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search for products..."
+                        class="w-full px-5 py-3 text-gray-700 bg-white border border-gray-300 rounded-full shadow-md outline-none transition-transform duration-300 transform focus:scale-105 focus:border-blue-500"
+                    />
+                    <button id="clear-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 hidden text-gray-500 hover:text-gray-700">
+                        &#10005;
+                    </button>
+                </div>
+            <nav class="space-x-2 grid grid-cols-4 gap-8 ">
+                <a href="#home" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 ">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                  </svg>
+                  Home</a>
+                <a href="#products" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                  </svg>
+                   Products</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                  </svg>
+                  About</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold  flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                  </svg>
+                  Contact</a>
+            </nav>
+        </div>
+        <div class="flex justify-center mt-14"><h2 class="text-4xl font-bold">Eazy Shopping</h2></div>
+        <div class=" flex justify-center mt-10 w-full ">
+        <style>
+            .slider {
+                height:600px; /* Adjust height as needed */
+                max-width: 1800px;
+            }
+        </style>
+    </head>
+    <body class="bg-gray-100 flex items-center justify-center h-screen">
+    
+        <!-- Slider Container -->
+        <div class="slider relative w-full max-w-lg overflow-hidden rounded-lg shadow-lg">
+            <div class="slides">
+                <div class="slide fade">
+                    <img src="Captures.PNG" alt="Image 1" class="w-full h-full object-cover">
+                </div>
+                <div class="slide fade">
+                    <img src="Capturess.PNG" alt="Image 2" class="w-full h-full object-cover">
+                </div>
+                <div class="slide fade">
+                    <img src="Capturesss.PNG" alt="Image 3" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <!-- Navigation buttons -->
+            <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="changeSlide(-1)">❮</button>
+            <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="changeSlide(1)">❯</button>
+        </div>
+    
+        <script>
+            let slideIndex = 0;
+            showSlides();
+    
+            function showSlides() {
+                const slides = document.querySelectorAll('.slide');
+                slides.forEach((slide) => {
+                    slide.style.display = "none";  
+                });
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }    
+                slides[slideIndex - 1].style.display = "block";  
+                setTimeout(showSlides, 3000); // Change image every 3 seconds
+            }
+    
+            function changeSlide(n) {
+                slideIndex += n;
+                const slides = document.querySelectorAll('.slide');
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                if (slideIndex < 1) { slideIndex = slides.length; }
+                slides.forEach((slide) => {
+                    slide.style.display = "none";
+                });
+                slides[slideIndex - 1].style.display = "block";
+            }
+        </script>
+    </body>
+</div>
+    </header>
+    <!-- Product Gallery -->
+    <section id="products" class="container mx-auto px-4 py-8 mt-80">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">Welcome to Our E-Shop</h2>
+            <p class="mt-2 text-lg">Discover our latest products</p><br>
+
+            </div>
+            </div>
+            </section>
+    <section id="products" class="container mx-auto px-4 py-8 mt-60">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold">Welcome to Our E-Shop</h2>
+            <p class="mt-2 text-lg">Discover our latest products</p><br>
+            </div>
+            </section>
+        <section class="container mx-auto px-6 py-8 ">
+            <div class="grid gap-8  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Product Card 1 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
+                        <p class="text-gray-600 mt-2">$29.99</p>
+                        <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                          Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                          </svg></button>
+                    </div>
+                </div>
+    
+                <!-- Product Card 2 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
+                        <p class="text-gray-600 mt-2">$39.99</p>
+                        <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                            Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                    </div>
+                </div>
+    
+                <!-- Product Card 3 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
+                        <p class="text-gray-600 mt-2">$49.99</p>
+                        <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                            Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                    </div>
+                </div>
+    
+                <!-- Product Card 4 -->
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
+                        <p class="text-gray-600 mt-2">$59.99</p>
+                        <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                            Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                            </svg></button>
+                    </div>
+                </div>
+            </div>
+                <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-14">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
+                            <p class="text-gray-600 mt-2">$29.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 2 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
+                            <p class="text-gray-600 mt-2">$39.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                               </svg>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 3 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
+                            <p class="text-gray-600 mt-2">$49.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 4 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
+                            <p class="text-gray-600 mt-2">$59.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container mx-auto px-6 py-8">
+                <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+                    <!-- Product Card 1 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
+                            <p class="text-gray-600 mt-2">$29.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 2 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
+                            <p class="text-gray-600 mt-2">$39.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 3 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
+                            <p class="text-gray-600 mt-2">$49.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+        
+                    <!-- Product Card 4 -->
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
+                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
+                            <p class="text-gray-600 mt-2">$59.99</p>
+                            <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300 flex justify-center gap-2 text-2xl">
+                                Add to Cart<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        </div>
+            
+            <!-- Repeat similar cards for other products -->
+        </div>
+    </section>
+    <div class="flex justify-center">
+        <h3 class="text-4xl font-bold">Our Local Location</h3></div>
+    <div class="flex justify-center"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d17965.89289304553!2d88.75539366440144!3d23.811018032457074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1730544169076!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mt-10"></iframe></div><br><br><br><br>
+</div>
+ <!-- Contact Us Section -->
+<section id="contact" class="py-16 ">
+<div class="container mx-auto px-4 md:px-8 lg:px-16">
+    <h2 class="text-4xl font-bold text-center text-black mb-6">Contact Us</h2>
+    <p class="text-center text-black mb-12 max-w-2xl mx-auto">We’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out to us through the form below.</p>
+    
+    <!-- Contact Form -->
+    <div class="flex flex-col md:flex-row justify-center gap-8">
+        <form class="bg-gray-100 p-8 rounded-lg shadow-lg w-full md:w-1/2">
+            <div class="mb-4">
+                <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Name" required>
+            </div>
+            <div class="mb-4">
+                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Email" required>
+            </div>
+            <div class="mb-4">
+                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white font-semibold py-2 rounded-lg hover:bg-green-500 transition duration-300">Send Message</button>
+        </form><div class="flex flex-col justify-center items-start text-gray-700 space-y-4 md:w-1/2">
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 text-black">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                  </svg>
+                  
+                <span class="text-lg font-medium text-black">Email: contact@e-shop.com</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 text-black" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                  </svg>                                                
+                <span class="text-lg font-medium text-black">Address: 123 Plant St., Green City, GA</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-2 w-8 text-black">
+                    <path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z" clip-rule="evenodd" />
+                  </svg>
+                  
+                <span class="text-lg font-medium text-black">Phone: +1 (123) 456-7890</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section><br> <br>
+
+    <!-- Footer Section -->
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="container mx-auto px-4 md:flex md:justify-between md:items-start space-y-6 md:space-y-0">
+        <!-- Website Details Section -->
+        <div class="mb-6 md:mb-0">
+            <h3 class="text-white text-2xl font-semibold">Our Company</h3>
+            <p class="mt-2 text-gray-400">123 Plant St., Green City, GA</p>
+            <p class="text-gray-400">Phone: +1 (555) 123-4567</p>
+            <p class="text-gray-400">Email: contact@e-shop.com</p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div>
+            <h3 class="text-white text-2xl font-semibold">Quick Links</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Icons Section -->
+        <div>
+            <h3 class="text-white text-2xl font-semibold">Follow Us</h3>
+            <div class="flex space-x-4 mt-2">
+                <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-white">
+                    <!-- SVG icon for Facebook -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 12C22 6.48 17.52 2 12 2S2 6.48 2 12c0 5.18 3.95 9.45 9 9.95v-7.02h-2.71V12h2.71v-1.97c0-2.7 1.62-4.19 4.1-4.19 1.18 0 2.43.21 2.43.21v2.63h-1.37c-1.35 0-1.76.84-1.76 1.7V12h3.06l-.49 2.93h-2.57v7.02c5.05-.5 9-4.77 9-9.95z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-white">
+                    <!-- SVG icon for Twitter -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22.46 6c-.77.35-1.61.58-2.49.69.89-.53 1.57-1.38 1.89-2.39-.83.49-1.75.84-2.73 1.03A4.48 4.48 0 0015.53 4c-2.48 0-4.5 2.01-4.5 4.5 0 .35.04.7.11 1.03-3.74-.19-7.06-1.98-9.29-4.69-.39.67-.61 1.44-.61 2.27 0 1.56.79 2.93 2 3.74-.74-.02-1.44-.23-2.04-.57v.06c0 2.18 1.55 4 3.61 4.41-.38.1-.79.16-1.2.16-.29 0-.58-.03-.86-.08.58 1.81 2.25 3.13 4.24 3.17a9.02 9.02 0 01-5.6 1.94c-.36 0-.71-.02-1.06-.06a12.78 12.78 0 006.92 2.02c8.3 0 12.85-6.87 12.85-12.85l-.01-.58A9.17 9.17 0 0024 5.54c-.88.39-1.82.65-2.8.76z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white">
+                    <!-- SVG icon for Instagram -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.055 2.007.243 2.48.411a4.92 4.92 0 011.68 1.007c.485.485.835 1.02 1.007 1.68.168.473.356 1.31.411 2.48.058 1.267.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.243 2.007-.411 2.48a4.9 4.9 0 01-1.007 1.68 4.9 4.9 0 01-1.68 1.007c-.473.168-1.31.356-2.48.411-1.267.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-2.007-.243-2.48-.411a4.92 4.92 0 01-1.68-1.007 4.92 4.92 0 01-1.007-1.68c-.168-.473-.356-1.31-.411-2.48-.058-1.267-.07-1.65-.07-4.85s.012-3.584.07-4.85c.055-1.17.243-2.007.411-2.48A4.9 4.9 0 014.83 3.5 4.9 4.9 0 016.51 2.51c.473-.168 1.31-.356 2.48-.411 1.267-.058 1.65-.07 4.85-.07zM12 0C8.74 0 8.332.01 7.053.07c-1.282.06-2.356.256-3.27.55A6.92 6.92 0 00.55 3.783a6.92 6.92 0 00-1.184 2.233c-.294.914-.49 1.988-.55 3.27C-.01 8.332 0 8.74 0 12s.01 3.668.07 4.947c.06 1.282.256 2.356.55 3.27a6.92 6.92 0 001.184 2.233 6.92 6.92 0 002.233 1.184c.914.294 1.988.49 3.27.55 1.279.06 1.687.07 4.947.07s3.668-.01 4.947-.07c1.282-.06 2.356-.256 3.27-.55a6.92 6.92 0 002.233-1.184 6.92 6.92 0 001.184-2.233c.294-.914.49-1.988.55-3.27.06-1.279.07-1.687.07-4.947s-.01-3.668-.07-4.947c-.06-1.282-.256-2.356-.55-3.27a6.92 6.92 0 00-1.184-2.233A6.92 6.92 0 0019.227.62c-.914-.294-1.988-.49-3.27-.55C15.668.01 15.26 0 12 0z"/>
+                        <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.88 0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Login/Signup Section -->
+        <div>
+            <h3 class="text-white text-2xl font-semibold">Account</h3>
+            <ul class="mt-2 space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-white">Login</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-white">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="text-center mt-10 text-gray-500">
+        &copy; 2023 Our Company. All rights reserved.
+    </div>
+</footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
