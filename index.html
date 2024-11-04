@@ -10,99 +10,137 @@
     <!-- Header Section -->
     <header class="bg-white shadow-md mt-2 h-24">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-4xl font-bold text-gray-800">E-Shop</h1>
+            <h1 class=" text-2xl lg:text-4xl font-bold text-gray-800 flex items-center ">E-Shop</h1>
             <body class="bg-gray-100 flex justify-center items-center min-h-screen">
-                <!-- Search Bar Section -->
-                <div class="relative w-full max-w-md">
-                    <input
-                        type="text"
-                        id="search-input"
-                        placeholder="Search for products..."
-                        class="w-full px-5 py-3 text-gray-700 bg-white border border-gray-300 rounded-full shadow-md outline-none transition-transform duration-300 transform focus:scale-105 focus:border-blue-500"
-                    />
-                    <button id="clear-btn" class="absolute top-1/2 right-4 transform -translate-y-1/2 hidden text-gray-500 hover:text-gray-700">
-                        &#10005;
-                    </button>
-                </div>
-            <nav class="space-x-2 grid grid-cols-4 gap-8 ">
-                <a href="#home" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex "><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 ">
+                 <!-- Search Icon and Bar Container -->
+    <div class="relative flex items-center ml-3 lg:ml-3 mt-2">
+        <!-- Search Icon Button -->
+        <button 
+            class="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition duration-150 ease-in-out "
+            aria-label="Toggle Search"
+            id="toggleButton"
+            onclick="toggleSearchBar()"
+        >
+            <!-- SVG Icon for Search -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex justify-end" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 017 7c0 1.657-.508 3.205-1.375 4.5l4.094 4.094a1 1 0 01-1.414 1.414l-4.094-4.094A7 7 0 1111 4z" />
+            </svg>
+        </button>
+
+        <!-- Search Input (Initially Hidden) -->
+        <div 
+            class="ml-4 transition-all duration-300 transform scale-0 origin-right" 
+            id="searchBarContainer"
+        >
+            <input 
+                type="text" 
+                placeholder="Search for something..." 
+                class="pl-4 pr-4 py-2 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent w-60 lg:w-80"
+            >
+            <!-- Dropdown Suggestion List -->
+         <div class="absolute top-14 left-0 right-0 bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden hidden" id="suggestions">
+            <ul class="divide-y divide-gray-100">
+                <li class="p-3 hover:bg-gray-100 cursor-pointer">Search suggestion 1</li>
+                <li class="p-3 hover:bg-gray-100 cursor-pointer">Search suggestion 2</li>
+                <li class="p-3 hover:bg-gray-100 cursor-pointer">Search suggestion 3</li>
+                <li class="p-3 hover:bg-gray-100 cursor-pointer">Search suggestion 4</li>
+            </ul>
+        </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Toggle Functionality -->
+    <script>
+        function toggleSearchBar() {
+            const searchBar = document.getElementById('searchBarContainer');
+            // Toggle the scale class to show/hide search bar
+            searchBar.classList.toggle('scale-0');
+        }
+        // JavaScript to toggle suggestion dropdown visibility based on input focus
+        const input = document.querySelector('input[type="text"]');
+        const suggestions = document.getElementById('suggestions');
+
+        input.addEventListener('focus', () => {
+            suggestions.classList.remove('hidden');
+        });
+
+        input.addEventListener('blur', () => {
+            setTimeout(() => suggestions.classList.add('hidden'), 150);
+        });
+    </script>
+<div class="">
+        <nav class="space-x-2 grid grid-cols-4 gap-8 ">
+            <div class="hidden lg:block"><a href="#home" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8 ">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                   </svg>
-                  Home</a>
-                <a href="#products" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                  Home</a></div>
+                <div class="hidden lg:block"><a href="#products" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
                   </svg>
-                   Products</a>
-                <a href="#about" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                   Products</a></div>
+                <div class="hidden lg:block"><a href="#about" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
                   </svg>
-                  About</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold  flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
+                  About</a></div>
+                <div class="hidden lg:block"><a href="#contact" class="text-gray-600 hover:text-blue-500 text-2xl font-semibold  flex"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-8">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                   </svg>
-                  Contact</a>
+                  Contact</a></div>
             </nav>
         </div>
-        <div class="flex justify-center mt-14"><h2 class="text-4xl font-bold">Eazy Shopping</h2></div>
-        <div class=" flex justify-center mt-10 w-full ">
+        </div>
+        <div class="flex justify-center mt-14 "><h2 class="text-4xl font-bold ">Eazy Shopping</h2></div>
         <style>
+            /* Custom animation for automatic slider */
+            @keyframes slide {
+                0%, 20% { transform: translateX(0%); }
+                25%, 45% { transform: translateX(-100%); }
+                50%, 70% { transform: translateX(-200%); }
+                75%, 95% { transform: translateX(-300%); }
+                100% { transform: translateX(0%); }
+            }
+            /* Apply the animation */
             .slider {
-                height:600px; /* Adjust height as needed */
-                max-width: 1800px;
+                animation: slide 20s infinite;
             }
         </style>
     </head>
-    <body class="bg-gray-100 flex items-center justify-center h-screen">
+    <body class="bg-gray-100 flex items-center justify-center h-screen ">
     
         <!-- Slider Container -->
-        <div class="slider relative w-full max-w-lg overflow-hidden rounded-lg shadow-lg">
-            <div class="slides">
-                <div class="slide fade">
-                    <img src="Captures.PNG" alt="Image 1" class="w-full h-full object-cover">
+        <div class="relative w-full lg:max-w-7xl md:max-w-4xl overflow-hidden rounded-lg shadow-lg flex justify-center items-center lg:ml-80 lg:mt-10 sm:h-60 sm:mt-10 md:h-96">
+            <!-- Slider Inner Wrapper -->
+            <div class="flex w-full transition-transform duration-700 ease-in-out slider items-center ">
+                <!-- Slide 1 -->
+                <div class="w-full flex-shrink-0 ">
+                    <img src="Captures.PNG" alt="Slide 1" class="w-full h-full object-cover">
                 </div>
-                <div class="slide fade">
-                    <img src="Capturess.PNG" alt="Image 2" class="w-full h-full object-cover">
+                <!-- Slide 2 -->
+                <div class="w-full flex-shrink-0 ">
+                    <img src="Capturess.PNG" alt="Slide 2" class="w-full h-full object-cover">
                 </div>
-                <div class="slide fade">
-                    <img src="Capturesss.PNG" alt="Image 3" class="w-full h-full object-cover">
+                <!-- Slide 3 -->
+                <div class="w-full flex-shrink-0 ">
+                    <img src="Capturesss.PNG" alt="Slide 3" class="w-full h-full object-cover">
+                </div>
+                <!-- Slide 4 -->
+                <div class="w-full flex-shrink-0 ">
+                    <img src="Capturessss.PNG" alt="Slide 4" class="w-full h-full object-cover">
                 </div>
             </div>
-            <!-- Navigation buttons -->
-            <button class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="changeSlide(-1)">❮</button>
-            <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="changeSlide(1)">❯</button>
+    
+            <!-- Navigation Dots -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <span class="w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"></span>
+                <span class="w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"></span>
+                <span class="w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"></span>
+                <span class="w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100 transition-opacity duration-300"></span>
+            </div>
         </div>
-    
-        <script>
-            let slideIndex = 0;
-            showSlides();
-    
-            function showSlides() {
-                const slides = document.querySelectorAll('.slide');
-                slides.forEach((slide) => {
-                    slide.style.display = "none";  
-                });
-                slideIndex++;
-                if (slideIndex > slides.length) { slideIndex = 1; }    
-                slides[slideIndex - 1].style.display = "block";  
-                setTimeout(showSlides, 3000); // Change image every 3 seconds
-            }
-    
-            function changeSlide(n) {
-                slideIndex += n;
-                const slides = document.querySelectorAll('.slide');
-                if (slideIndex > slides.length) { slideIndex = 1; }
-                if (slideIndex < 1) { slideIndex = slides.length; }
-                slides.forEach((slide) => {
-                    slide.style.display = "none";
-                });
-                slides[slideIndex - 1].style.display = "block";
-            }
-        </script>
-    </body>
-</div>
+        <div class=" flex justify-center mt-10 w-full hidden lg:block ml-14">
     </header>
     <!-- Product Gallery -->
-    <section id="products" class="container mx-auto px-4 py-8 mt-80">
+    <section id="products" class="container mx-auto px-4 py-8 mt-80 hidden  lg:block md:block">
         <div class="text-center">
             <h2 class="text-4xl font-bold">Welcome to Our E-Shop</h2>
             <p class="mt-2 text-lg">Discover our latest products</p><br>
@@ -110,17 +148,17 @@
             </div>
             </div>
             </section>
-    <section id="products" class="container mx-auto px-4 py-8 mt-60">
+    <section id="products" class="container mx-auto px-4 py-8 md:mt-20 lg:mt-10 mt-96">
         <div class="text-center">
             <h2 class="text-4xl font-bold">Welcome to Our E-Shop</h2>
             <p class="mt-2 text-lg">Discover our latest products</p><br>
             </div>
             </section>
         <section class="container mx-auto px-6 py-8 ">
-            <div class="grid gap-8  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-8  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
                 <!-- Product Card 1 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <img src="Capture.PNG" alt="Product Image" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
                         <p class="text-gray-600 mt-2">$29.99</p>
@@ -133,7 +171,7 @@
     
                 <!-- Product Card 2 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <img src="Capturee.PNG" alt="Product Image" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
                         <p class="text-gray-600 mt-2">$39.99</p>
@@ -146,7 +184,7 @@
     
                 <!-- Product Card 3 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <img src="Captureee.PNG" alt="Product Image" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
                         <p class="text-gray-600 mt-2">$49.99</p>
@@ -159,7 +197,7 @@
     
                 <!-- Product Card 4 -->
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                    <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                    <img src="Captureeee.PNG" alt="Product Image" class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
                         <p class="text-gray-600 mt-2">$59.99</p>
@@ -173,7 +211,7 @@
                 <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 mt-14">
                     <!-- Product Card 1 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Captureeeee.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
                             <p class="text-gray-600 mt-2">$29.99</p>
@@ -186,7 +224,7 @@
         
                     <!-- Product Card 2 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Captureeeeee.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
                             <p class="text-gray-600 mt-2">$39.99</p>
@@ -199,7 +237,7 @@
         
                     <!-- Product Card 3 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Capturep.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
                             <p class="text-gray-600 mt-2">$49.99</p>
@@ -212,7 +250,7 @@
         
                     <!-- Product Card 4 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Capturepp.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
                             <p class="text-gray-600 mt-2">$59.99</p>
@@ -228,7 +266,7 @@
                 <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
                     <!-- Product Card 1 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Captureppp.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 1</h3>
                             <p class="text-gray-600 mt-2">$29.99</p>
@@ -241,7 +279,7 @@
         
                     <!-- Product Card 2 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Capturepppp.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 2</h3>
                             <p class="text-gray-600 mt-2">$39.99</p>
@@ -254,7 +292,7 @@
         
                     <!-- Product Card 3 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Captureppppp.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 3</h3>
                             <p class="text-gray-600 mt-2">$49.99</p>
@@ -267,7 +305,7 @@
         
                     <!-- Product Card 4 -->
                     <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-                        <img src="https://via.placeholder.com/300" alt="Product Image" class="w-full h-48 object-cover">
+                        <img src="Capturel.PNG" alt="Product Image" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold text-gray-800">Product 4</h3>
                             <p class="text-gray-600 mt-2">$59.99</p>
@@ -404,3 +442,5 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+    
